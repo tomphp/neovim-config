@@ -8,6 +8,7 @@ return {
 
     configs.setup({
       ensure_installed = {
+        "bicep",
         "c_sharp",
         "c",
         "haskell",
