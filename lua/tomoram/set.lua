@@ -13,3 +13,5 @@ vim.opt.wrap = false
 vim.opt.incsearch = false
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+
+vim.cmd.colorscheme "catppuccin"
