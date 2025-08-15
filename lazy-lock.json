@@ -3,6 +3,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "88205953bd748322b49b26e1dfb0389932520dc9" },
   "haskell-tools.nvim": { "branch": "master", "commit": "2e4d5cf328939e6176df9925209e5d2e289f3187" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lualine.nvim": { "branch": "master", "commit": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "7f0bf635082bb9b7d2b37766054526a6ccafdb85" },
   "mason.nvim": { "branch": "main", "commit": "7dc4facca9702f95353d5a1f87daf23d78e31c2a" },
   "nvim-lspconfig": { "branch": "master", "commit": "f0c6ccf43997a1c7e9ec4aea36ffbf2ddd9f15ef" },
