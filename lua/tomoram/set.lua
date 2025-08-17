@@ -10,7 +10,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.incsearch = false
+vim.opt.incsearch = true
 
 vim.keymap.set('i', 'jk', '<C-\\><C-n>', { desc = "Exit insert mode" })
 
