@@ -14,7 +14,7 @@ vim.opt.incsearch = true
 
 vim.keymap.set('i', 'jk', '<C-\\><C-n>', { desc = "Exit insert mode" })
 
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open diagnostic / show error' })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { desc = 'Save file (insert mode)' })
