@@ -21,5 +21,6 @@ vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { desc = 'Save file (insert mode)' 
 
 vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', vim.cmd.bnext, { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
 
 vim.cmd.colorscheme "catppuccin"
