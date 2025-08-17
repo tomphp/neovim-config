@@ -1,6 +1,7 @@
 {
   "blink.cmp": { "branch": "main", "commit": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8" },
   "catppuccin": { "branch": "main", "commit": "3aaf3ab60221bca8edb1354e41bd514a22c89de2" },
+  "delaytrain.nvim": { "branch": "main", "commit": "eb8d2157e6a7de1b4f024f7ca5bccc4014d88b05" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
   "gitsigns.nvim": { "branch": "main", "commit": "b01433169be710d6c69f7b4ee264d9670698b831" },
   "haskell-tools.nvim": { "branch": "master", "commit": "2e4d5cf328939e6176df9925209e5d2e289f3187" },
