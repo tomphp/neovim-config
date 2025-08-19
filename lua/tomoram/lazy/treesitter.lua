@@ -1,12 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  branch = "main",
+  branch = "master",
   lazy = false,
+  build = ":TSUpdate",
   config = function()
-    local configs = require("nvim-treesitter.configs")
-
-    configs.setup({
+    require('nvim-treesitter.configs').setup({
       ensure_installed = {
         "bicep",
         "c_sharp",
