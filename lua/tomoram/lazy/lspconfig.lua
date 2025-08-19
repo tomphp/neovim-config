@@ -1,3 +1,13 @@
+local on_attach = function(client, bufnr)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Go to definition' })
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr, desc = 'Go to declaration' })
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = bufnr, desc = 'Go to references' })
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, desc = 'Go to implementation' })
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename symbol' })
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'Code actions' })
+  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { buffer = bufnr, desc = 'Format buffer' })
+end
+
 return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
@@ -9,7 +19,9 @@ return {
       "neovim/nvim-lspconfig",
       config = function ()
         local capabilities = require("blink.cmp").get_lsp_capabilities()
-        require("lspconfig").lua_ls.setup { capabilities = capabilities }
+        local opts = { capabilities = capabilities, on_attach = on_attach }
+        require("lspconfig").bicep.setup(opts)
+        require("lspconfig").lua_ls.setup(opts)
       end
     },
     { "Saghen/blink.cmp" }
