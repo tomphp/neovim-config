@@ -13,6 +13,17 @@ return {
   opts = {
     ensure_installed = { "bicep", "lua_ls", "powershell_es" },
   },
+  -- config = function ()
+  --   local lspconfig = require('lspconfig')
+  --   -- local capabilities = require("blink.cmp").get_lsp_capabilities()
+  --   require('mason-lspconfig').setup_handlers {
+  --     function(server_name)
+  --       lspconfig[server_name].setup {
+  --         on_attach = on_attach
+  --       }
+  --     end
+  --   }
+  -- end,
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },
     {
@@ -21,11 +32,16 @@ return {
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         local opts = { capabilities = capabilities, on_attach = on_attach }
 
-        require("lspconfig").bicep.setup(opts)
+        require("lspconfig").bicep.setup {
+          capabilities = capabilities,
+          on_attach = on_attach,
+          cmd = { vim.fn.stdpath("data") .. "/mason/bin/bicep-lsp.cmd" }
+        }
+
         require("lspconfig").lua_ls.setup(opts)
 
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
-        require("lspconfig").powershell_es.setup({
+        require("lspconfig").powershell_es.setup {
           shell = "powershell",
           bundle_path = install_path,
           on_attach = on_attach,
@@ -36,7 +52,7 @@ return {
               scriptAnalysis = { enable = true },
             },
           },
-        })
+        }
       end
     },
     { "Saghen/blink.cmp" }
