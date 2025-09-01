@@ -21,9 +21,6 @@ return {
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         local opts = { capabilities = capabilities, on_attach = on_attach }
 
-        require("lspconfig").bicep.setup(opts)
-        require("lspconfig").lua_ls.setup(opts)
-
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
         require("lspconfig").powershell_es.setup({
           shell = "powershell",
