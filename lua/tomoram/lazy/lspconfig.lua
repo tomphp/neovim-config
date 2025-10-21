@@ -11,7 +11,7 @@ end
 return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
-    ensure_installed = { "bicep", "lua_ls", "powershell_es" },
+    ensure_installed = { "bicep", "lua_ls", "powershell_es", "swift-masonlsp" },
   },
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },

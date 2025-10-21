@@ -16,6 +16,7 @@ return {
         "javascript",
         "lua",
         "python",
+        "swift",
         "typescript",
         "vim",
       },

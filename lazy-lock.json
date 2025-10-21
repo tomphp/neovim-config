@@ -7,6 +7,7 @@
   "haskell-tools.nvim": { "branch": "master", "commit": "2e4d5cf328939e6176df9925209e5d2e289f3187" },
   "idris2-nvim": { "branch": "main", "commit": "e3d4242a525ec8f1e0846f47b9730035a046100f" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lean.nvim": { "branch": "main", "commit": "1e11f5c2363bb1920f796b488afe98d1f0beb7f7" },
   "lualine.nvim": { "branch": "master", "commit": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "7f0bf635082bb9b7d2b37766054526a6ccafdb85" },
   "mason.nvim": { "branch": "main", "commit": "7dc4facca9702f95353d5a1f87daf23d78e31c2a" },
