@@ -22,7 +22,8 @@ return {
         local opts = { capabilities = capabilities, on_attach = on_attach }
 
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
-        require("lspconfig").powershell_es.setup({
+
+        vim.lsp.config('powershell_es', {
           shell = "powershell",
           bundle_path = install_path,
           on_attach = on_attach,
