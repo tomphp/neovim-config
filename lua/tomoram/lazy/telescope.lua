@@ -9,5 +9,14 @@ return {
     vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Telescope buffers" })
     vim.keymap.set("n", "<leader>fs", telescope.lsp_document_symbols, { desc = "Telescope document symbols" })
     vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
+    require('telescope').setup{
+      pickers = {
+        buffers = {
+          sort_mru = true,       -- Sort by most recently used
+          sort_lastused = true,  -- Put the current buffer at the end (so the 2nd most recent is at the top)
+          theme = "dropdown",    -- (Optional) Use a smaller UI similar to a switcher
+        }
+      }
+    }
   end
 }
