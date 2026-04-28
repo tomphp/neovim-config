@@ -21,7 +21,12 @@ vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { desc = 'Save file (insert mode)' 
 
 vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', vim.cmd.bnext, { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>bd', ':BufDel<CR>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<BS>', ':b#<CR>', { desc = 'Jump to last buffer' })
+
+vim.keymap.set('n', 'ta', vim.cmd.tabnew, { desc = 'Add tab' })
+vim.keymap.set('n', 'tr', ':Tabby rename_tab ', { desc = 'Rename tab' })
+vim.keymap.set('n', 'tn', 'gt', { desc = 'Next tab' })
+vim.keymap.set('n', 'tp', 'gT', { desc = 'Previous tab' })
 
 vim.cmd.colorscheme "catppuccin"
