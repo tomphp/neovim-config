@@ -12,21 +12,32 @@ vim.opt.wrap = false
 
 vim.opt.incsearch = true
 
-vim.keymap.set('i', 'jk', '<C-\\><C-n>', { desc = "Exit insert mode" })
+-- vim.keymap.set('i', 'jk', '<C-\\><C-n>', { desc = "Exit insert mode" })
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
-vim.keymap.set('n', '<C-s>', vim.cmd.w, { desc = 'Save file' })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { desc = 'Save file (insert mode)' })
-
+-- buffers
 vim.keymap.set('n', '<leader>bn', vim.cmd.bnext, { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious, { desc = 'Previous buffer' })
 vim.keymap.set('n', '<leader>bd', ':BufDel<CR>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<BS>', ':b#<CR>', { desc = 'Jump to last buffer' })
 
+-- tabs
 vim.keymap.set('n', 'ta', vim.cmd.tabnew, { desc = 'Add tab' })
 vim.keymap.set('n', 'tr', ':Tabby rename_tab ', { desc = 'Rename tab' })
 vim.keymap.set('n', 'tn', 'gt', { desc = 'Next tab' })
 vim.keymap.set('n', 'tp', 'gT', { desc = 'Previous tab' })
 
+-- substitute
+vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
+vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
+vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
+vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
+
 vim.cmd.colorscheme "catppuccin"
+
+-- autosave
+vim.api.nvim_create_autocmd(
+  { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" },
+  { desc = "autosave", pattern = "*", command = "silent! update" }
+)
