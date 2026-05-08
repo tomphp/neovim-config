@@ -34,6 +34,12 @@ vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
 vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
 vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
 
+-- persistence
+vim.keymap.set("n", "<leader>qs", function() require("persistence").load() end, { desc = 'Load session for current directory' })
+vim.keymap.set("n", "<leader>qS", function() require("persistence").select() end, { desc = 'Select session to load' })
+vim.keymap.set("n", "<leader>ql", function() require("persistence").load({ last = true }) end, { desc = 'Load last session' })
+vim.keymap.set("n", "<leader>qd", function() require("persistence").stop() end, { desc = 'Turn off persistence' })
+
 vim.cmd.colorscheme "catppuccin"
 
 -- autosave
