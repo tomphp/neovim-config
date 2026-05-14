@@ -16,6 +16,16 @@ return {
           sort_lastused = true,  -- Put the current buffer at the end (so the 2nd most recent is at the top)
           theme = "dropdown",    -- (Optional) Use a smaller UI similar to a switcher
         }
+      },
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-d>"] = require("telescope.actions").delete_buffer,
+          },
+          n = {
+            ["<C-d>"] = require("telescope.actions").delete_buffer,
+          }
+        }
       }
     }
   end
