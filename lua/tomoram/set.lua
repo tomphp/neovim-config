@@ -30,12 +30,6 @@ vim.keymap.set('n', 'tr', ':Tabby rename_tab ', { desc = 'Rename tab' })
 vim.keymap.set('n', 'tn', 'gt', { desc = 'Next tab' })
 vim.keymap.set('n', 'tp', 'gT', { desc = 'Previous tab' })
 
--- substitute
-vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
-vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
-vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
-vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
-
 -- persistence
 vim.keymap.set("n", "<leader>qs", function() require("persistence").load() end, { desc = 'Load session for current directory' })
 vim.keymap.set("n", "<leader>qS", function() require("persistence").select() end, { desc = 'Select session to load' })
