@@ -1,6 +1,13 @@
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+vim.filetype.add({
+  extension = {
+    bicep = "bicep",
+    bicepparam = "bicep-params",
+  },
+})
+
 vim.opt.termguicolors = true
 
 vim.opt.nu = true
