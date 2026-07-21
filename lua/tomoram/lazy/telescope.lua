@@ -3,20 +3,44 @@ return {
   branch = "0.1.x",
   cmd = "Telescope",
   keys = {
-    { "<leader>ff", desc = "Telescope find files" },
-    { "<leader>fg", desc = "Telescope live grep" },
-    { "<leader>fb", desc = "Telescope buffers" },
-    { "<leader>fs", desc = "Telescope document symbols" },
-    { "<leader>fh", desc = "Telescope help tags" },
+    {
+      "<leader>ff",
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      desc = "Telescope find files",
+    },
+    {
+      "<leader>fg",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      desc = "Telescope live grep",
+    },
+    {
+      "<leader>fb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "Telescope buffers",
+    },
+    {
+      "<leader>fs",
+      function()
+        require("telescope.builtin").lsp_document_symbols()
+      end,
+      desc = "Telescope document symbols",
+    },
+    {
+      "<leader>fh",
+      function()
+        require("telescope.builtin").help_tags()
+      end,
+      desc = "Telescope help tags",
+    },
   },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    local telescope = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Telescope find files" })
-    vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Telescope live grep" })
-    vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Telescope buffers" })
-    vim.keymap.set("n", "<leader>fs", telescope.lsp_document_symbols, { desc = "Telescope document symbols" })
-    vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
     require("telescope").setup({
       pickers = {
         buffers = {

@@ -19,7 +19,6 @@ return {
       "neovim/nvim-lspconfig",
       config = function()
         local capabilities = require("blink.cmp").get_lsp_capabilities()
-        local opts = { capabilities = capabilities, on_attach = on_attach }
 
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
 
