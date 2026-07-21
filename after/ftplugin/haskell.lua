@@ -1,5 +1,3 @@
-print("Loading Haskell ftplugin for buffer: " .. vim.api.nvim_get_current_buf())
-
 local ht = require("haskell-tools")
 local opts = { noremap = true, silent = true, buffer = true }
 

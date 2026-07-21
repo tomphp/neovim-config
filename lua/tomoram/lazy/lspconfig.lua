@@ -1,4 +1,4 @@
-local on_attach = function(_client, bufnr)
+local function on_attach(_client, bufnr)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to declaration" })
   vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Go to references" })
@@ -18,15 +18,22 @@ return {
     {
       "neovim/nvim-lspconfig",
       config = function()
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
+        vim.lsp.config("*", {
+          capabilities = require("blink.cmp").get_lsp_capabilities(),
+        })
+
+        vim.api.nvim_create_autocmd("LspAttach", {
+          desc = "Set up LSP keymaps on attach",
+          callback = function(args)
+            on_attach(vim.lsp.get_client_by_id(args.data.client_id), args.buf)
+          end,
+        })
 
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
 
         vim.lsp.config("powershell_es", {
           shell = "powershell",
           bundle_path = install_path,
-          on_attach = on_attach,
-          capabilities = capabilities,
           settings = {
             powershell = {
               enableProfileLoading = true,

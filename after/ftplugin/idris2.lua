@@ -1,5 +1,3 @@
-print("Loading Idris2 ftplugin for buffer: " .. vim.api.nvim_get_current_buf())
-
 local hover = require("idris2.hover")
 local code_action = require("idris2.code_action")
 local repl = require("idris2.repl")

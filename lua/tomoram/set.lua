@@ -7,7 +7,7 @@ vim.filetype.add({
 
 vim.opt.termguicolors = true
 
-vim.opt.nu = true
+vim.opt.number = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
