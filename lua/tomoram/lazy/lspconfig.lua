@@ -1,11 +1,11 @@
-local on_attach = function(client, bufnr)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Go to definition' })
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr, desc = 'Go to declaration' })
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = bufnr, desc = 'Go to references' })
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, desc = 'Go to implementation' })
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename symbol' })
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'Code actions' })
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { buffer = bufnr, desc = 'Format buffer' })
+local on_attach = function(_client, bufnr)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
+  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Go to declaration" })
+  vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Go to references" })
+  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Go to implementation" })
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename symbol" })
+  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code actions" })
+  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { buffer = bufnr, desc = "Format buffer" })
 end
 
 return {
@@ -17,13 +17,13 @@ return {
     { "mason-org/mason.nvim", opts = {} },
     {
       "neovim/nvim-lspconfig",
-      config = function ()
+      config = function()
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         local opts = { capabilities = capabilities, on_attach = on_attach }
 
         local install_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services"
 
-        vim.lsp.config('powershell_es', {
+        vim.lsp.config("powershell_es", {
           shell = "powershell",
           bundle_path = install_path,
           on_attach = on_attach,
@@ -35,8 +35,8 @@ return {
             },
           },
         })
-      end
+      end,
     },
-    { "Saghen/blink.cmp" }
-  }
+    { "Saghen/blink.cmp" },
+  },
 }

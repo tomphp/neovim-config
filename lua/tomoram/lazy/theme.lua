@@ -4,8 +4,8 @@ return {
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      flavour = "macchiato"
+      flavour = "macchiato",
       -- flavour = "latte"
     })
-  end
+  end,
 }

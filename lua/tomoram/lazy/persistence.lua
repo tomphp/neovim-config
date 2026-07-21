@@ -3,5 +3,5 @@ return {
   event = "BufReadPre",
   opts = {
     -- add any custom options here
-  }
+  },
 }

@@ -1,4 +1,4 @@
 return {
-  'nanozuki/tabby.nvim',
-  opts = {}
+  "nanozuki/tabby.nvim",
+  opts = {},
 }

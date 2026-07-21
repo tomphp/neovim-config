@@ -5,13 +5,12 @@ return {
     modes = {
       search = {
         enabled = true,
-        highlight = { backdrop = true }
+        highlight = { backdrop = true },
       },
       char = {
-        enabled = true
-      }
-    }
+        enabled = true,
+      },
+    },
   },
-  keys = {
-  },
+  keys = {},
 }

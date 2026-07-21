@@ -1,4 +1,4 @@
 return {
-  'ojroques/nvim-bufdel',
-  opts = {}
+  "ojroques/nvim-bufdel",
+  opts = {},
 }

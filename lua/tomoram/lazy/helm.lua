@@ -1,6 +1,5 @@
 return {
-    "qvalentin/helm-ls.nvim",
-    ft = "helm",
-    opts = {
-    },
+  "qvalentin/helm-ls.nvim",
+  ft = "helm",
+  opts = {},
 }
