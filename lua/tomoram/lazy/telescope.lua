@@ -1,6 +1,14 @@
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
+  cmd = "Telescope",
+  keys = {
+    { "<leader>ff", desc = "Telescope find files" },
+    { "<leader>fg", desc = "Telescope live grep" },
+    { "<leader>fb", desc = "Telescope buffers" },
+    { "<leader>fs", desc = "Telescope document symbols" },
+    { "<leader>fh", desc = "Telescope help tags" },
+  },
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     local telescope = require("telescope.builtin")
