@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  version = "*", -- 0.1.x relies on the old nvim-treesitter master branch API
   cmd = "Telescope",
   keys = {
     {

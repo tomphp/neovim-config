@@ -1,3 +1,8 @@
+-- idris2-nvim is optional (see lua/tomoram/lazy/idris.lua); skip if not loaded
+if not pcall(require, "idris2") then
+  return
+end
+
 local hover = require("idris2.hover")
 local code_action = require("idris2.code_action")
 local repl = require("idris2.repl")

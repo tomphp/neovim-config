@@ -1,6 +1,10 @@
 return {
   "Julian/lean.nvim",
   event = { "BufReadPre *.lean", "BufNewFile *.lean" },
+  -- Only useful with a Lean toolchain (installed via elan)
+  cond = function()
+    return require("tomoram.platform").has("lean", "lake")
+  end,
 
   dependencies = {
     "neovim/nvim-lspconfig",
@@ -11,8 +15,11 @@ return {
     -- 'tomtom/tcomment_vim',           -- for commenting
   },
 
-  ---@type lean.Config
-  opts = { -- see below for full configuration options
-    mappings = true,
-  },
+  -- lean.nvim no longer has a setup() function; it reads vim.g.lean_config
+  init = function()
+    ---@type lean.Config
+    vim.g.lean_config = { -- see the manual for full configuration options
+      mappings = true,
+    }
+  end,
 }
